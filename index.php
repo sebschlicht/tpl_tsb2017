@@ -76,7 +76,7 @@ $doc->addScript($tmplDir . '/js/template.js');
           <div class="navbar-logo">
             <img src="<?php echo $tmplDir; ?>/images/logo.png" alt="TSB" />
           </div>
-          <div class="navbar-title hidden-xs hidden-sm">
+          <div class="navbar-title hidden-xs hidden-sm hidden-md">
             <img src="<?php echo $tmplDir; ?>/images/title.png" alt="Turnerschaft Bendorf" />
           </div>
         </a>

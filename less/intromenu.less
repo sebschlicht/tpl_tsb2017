@@ -26,6 +26,9 @@
       width: 100%;
     }
   }
+  .link-note {
+    display: block;
+  }
   .overlay {
     img {
       .ease();
@@ -60,8 +63,11 @@
       padding-right: 15px;
     }
   }
+  #intro .link-note {
+    min-height: 40px;
+  }
   #intro img {
-    min-height: 139px;
+    min-height: 107px;
   }
 }
 
@@ -76,6 +82,9 @@
 @media (min-width: @screen-lg-min) {
   #intro img {
     min-height: 173px;
+  }
+  #intro .link-note {
+    min-height: 0;
   }
 }
 
