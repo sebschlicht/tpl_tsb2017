@@ -1,0 +1,182 @@
+// main: template.less
+
+// #########################
+// # Mobile-first directives
+// #########################
+
+@cMenuHover: #D4312E;
+@cMenuHoverText: #FFFFFF;
+
+.header-wrapper {
+  margin: 0;
+  border: none;
+}
+
+.navbar > .container {
+  padding: 0;
+}
+
+.navbar-brand {
+  height: auto;
+}
+.navbar-logo {
+  float: left;
+}
+.navbar-title {
+  float: left;
+  padding-top: 30px;
+  margin-left: 15px;
+}
+
+.navbar-right {
+  .navbar-nav {
+    // menu items
+    li {
+      position: relative;
+      a {
+        padding: 47px 20px 46px;
+        color: #AEAEAE;
+        background-color: #FFFFFF;
+        border-left: 1px solid #E1E1E1;
+        font-size: 15px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    }
+    li:last-child {
+      a {
+        border-right: 1px solid #E1E1E1;
+      }
+    }
+    // submenu indicator
+    .deeper > a {
+      &:after {
+        .ease();
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 35px;
+        margin: 0 auto;
+        width: 10px;
+        height: 10px;
+        border: 3px solid #AEAEAE;
+        border-right: none;
+        border-bottom: none;
+        .rotation(225deg);
+      }
+    }
+    // hovered / active menu items
+    li:hover,
+    .active {
+      > a {
+        color: @cMenuHoverText;
+        background-color: @cMenuHover;
+        border-color: @cMenuHover;
+        // lighten submenu indicator
+        &:after {
+          border-color: @cMenuHoverText;
+        }
+        // revert Bootstrap override
+        &:hover,
+        &:focus {
+          color: @cMenuHoverText;
+          background-color: @cMenuHover;
+        }
+      }
+    }
+    // submenus
+    li > .nav-child {
+      .ease();
+      visibility: hidden;
+      position: absolute;
+      padding: 0;
+      margin: 0;
+      opacity: 0;
+      z-index: 1;
+      list-style: none;
+      li {
+        list-style: none;
+        
+        // fix: margin between items
+        margin-top: -1px;
+        &:first-child {
+          margin: 0;
+        }
+      }
+      a {
+        display: block;
+        width: 13em;
+        padding: 9px 14px;
+        border: none;
+        border-bottom: 1px solid;
+        text-decoration: none;
+        text-transform: none;
+      }
+      > li:last-child > a {
+        border: none;
+      }
+      // hide submenu item border on hover
+      li:hover,
+      .active {
+        > a {
+          &:after {
+            border-color: @cMenuHover;
+          }
+        }
+      }
+    }
+    .deeper:hover > .nav-child {
+      visibility: visible;
+      opacity: 1;
+    }
+    // sub-submenu indicator
+    .nav-child {
+      .deeper > a {
+        &:after {
+          left: auto;
+          right: 14px;
+          top: 0;
+          bottom: 0;
+          margin: auto 0;
+          .rotation(135deg);
+        }
+      }
+      // lighten submenu indicator
+      .deeper:hover,
+      .deeper.active {
+        > a {
+          //border-color: @cMenuHover;
+          &:after {
+            border-color: @cMenuHoverText;
+          }
+        }
+      }
+    }
+    // sub-submenus
+    li > .nav-child .nav-child {
+      top: 0;
+      left: 100%;
+    }
+  }
+}
+
+/* Extra-small devices (smartphones, 767px and less) */
+@media (max-width: @screen-xs-max) {
+  // horizontal padding to screen
+  .navbar-header {
+    padding: 0 15px;
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+}

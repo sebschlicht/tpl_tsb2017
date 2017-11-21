@@ -1,0 +1,175 @@
+// compress: true, strictMath: true, out: ../css/template.css
+
+// import functions and variables
+@import (reference) "base/elements.less";// common mix-ins
+@import (reference) "variables.less";
+
+// import main template components
+//@import "joomla.less";
+@import "base/base.less";
+@import "mainmenu.less";
+@import "breadcrumbs.less";
+@import "sidebar.less";
+@import "topbar.less";
+@import "footer.less";
+
+@import "intromenu.less";
+
+// import view-specific template components
+@import "views/blog.less";
+@import "views/article.less";
+
+// #########################
+// # Extensions
+// #########################
+
+// Bootstrap fixes
+.page-header {
+  margin: 20px 0;
+  padding-bottom: 0;
+  border: none;
+}
+
+// #########################
+// # Template structure
+// #########################
+
+// # TODO
+// * footer
+// * article view
+// * banner design
+// * banner override for real URL injection
+// * gallery extension design
+
+#content-wrapper {
+  margin-top: 30px;
+}
+#content {
+  padding: 0 15px 50px;
+}
+.item-page {
+  padding-top: 20px;
+  .page-header,
+  .page-header h1 {
+    margin-top: 0;
+  }
+  .page-header h2 {
+    color: @cBase;
+  }
+}
+
+.page-header {
+  // page title
+  h1 {
+    position: relative;
+    margin-top: 0;
+    font-size: 120%;
+    text-align: center;
+  }
+  // item title
+  h2 {
+    margin-top: 0;
+  }
+}
+
+// #########################
+// # Tile Items
+// #########################
+
+.item {
+  padding: 15px;
+  background-color: #FFFFFF;
+  .item-image {
+    border-bottom: 3px solid @cSecondary;
+  }
+  .item-title {
+    h2 {
+      font-weight: 200;
+    }
+  }
+  // inline details in uppercase
+  .item-details {
+    padding-bottom: 10px;
+    margin-bottom: (10px + 1px); // padding + border => border vertically centered
+    border-bottom: 1px solid #CCC;
+    font-family: @fHeading;
+    font-size: 14px;
+    text-transform: uppercase;
+    .detail-label {
+      display: inline-block;
+      margin-right: 8px;
+    }
+    .detail-value {
+      position: relative;
+      display: inline-block;
+      padding-right: 17px;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 10px;
+        top: 5px;
+        right: 9px;
+        background-color: @cTextContrast;
+      }
+      &:last-child:after {
+        display: none;
+      }
+    }
+  }
+  .item-button {
+    margin-top: 30px;
+    color: @cTextContrast;
+    background-color: @cSecondary;
+  }
+}
+
+
+/* Extra-small devices (smartphones, 767px and less) */
+@media (max-width: @screen-xs-max) {
+  // #########################
+  // # Tile Items
+  // #########################
+  .item {
+    margin-bottom: 15px;
+    .item-title {
+      word-wrap: break-word;
+      h2 {
+        font-size: 170%;
+      }
+    }
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  // #########################
+  // # Tile Items
+  // #########################
+  .item {
+    margin-bottom: 30px;
+    
+    // more button spacing, hover effects
+    .item-button {
+      .ease();
+      margin-top: 10px;
+      &:hover {
+        color: @cSecondaryLight;
+      }
+    }
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+  .page-header {
+    // page title
+    h1 {
+      font-size: 150%;
+    }
+  }
+}

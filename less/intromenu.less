@@ -1,0 +1,66 @@
+// main: template.less
+
+// #########################
+// # Mobile-first directives
+// #########################
+
+#intro {
+  padding-top: 15px;
+  background: #FFFFFF;
+  a {
+    padding: 0;
+    border-bottom: 5px solid @cSecondary;
+    .link-title {
+      padding: 10px 20px;
+      color: @cTextContrast;
+      background-color: @cBase;
+      border-left: 5px solid @cSecondary;
+      font-weight: bold;
+      h3 {
+        margin: 0 0 5px;
+        font-size: 1.7rem;
+        font-weight: bold;
+      }
+    }
+    img {
+      width: 100%;
+      min-height: 173px;
+    }
+  }
+  .overlay {
+    img {
+      .ease();
+      opacity: .7;
+    }
+    &:hover {
+      img {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/* Extra-small devices (smartphones, 767px and less) */
+@media (max-width: @screen-xs-max) {
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  // reduce horizontal spacing
+  #intro .nav > li {
+    padding-left: 10px;
+    padding-right: 0;
+    &:last-child {
+      padding-right: 10px;
+    }
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+}
+

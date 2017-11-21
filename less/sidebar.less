@@ -1,0 +1,41 @@
+// main: template.less
+
+// #########################
+// # Mobile-first directives
+// #########################
+
+#sidebar {
+  .module-item {
+    margin-bottom: 40px;
+    > h3 {
+      padding: 12px 20px;
+      margin: 0;
+      color: @cTextContrast;
+      background-color: @cBase;
+      border-left: 5px solid @cSecondary;
+      font-size: 1.6rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .content {
+      padding: 15px;
+      background-color: #FFFFFF;
+    }
+  }
+}
+
+/* Extra-small devices (smartphones, 767px and less) */
+@media (max-width: @screen-xs-max) {
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+}

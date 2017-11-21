@@ -1,0 +1,69 @@
+// main: template.less
+
+// #########################
+// # Mobile-first directives
+// #########################
+
+@cTopmenu: #D3DADC;
+@cTopmenuBg: transparent;
+
+@cTopmenuHover: @cTextContrast;
+@cTopmenuBgHover: @cSecondary;
+
+.topbar-wrapper {
+  background-color: #292A2C;
+}
+
+.topbar {
+  padding: 0;
+}
+
+.topbar-menu {
+  .navbar-nav {
+    margin: 0;
+  }
+  .nav > li {
+    float: left;
+    a {
+      .ease();
+      .box-shadow(inset 1px 0 0 0 #404244);
+      padding: 13px 15px;
+      color: @cTopmenu;
+      text-shadow: -1px -1px rgba(0, 0, 0, .9);
+      border-left: 1px solid #000000;
+      &:hover {
+        color: @cTopmenuHover;
+        background-color: @cTopmenuBgHover;
+      }
+      &:focus {
+        background-color: @cTopmenuBg;
+      }
+    }
+  }
+  /* disable topbar active item marker
+  .nav > li.current {
+    a {
+      background-color: @cTopmenuBgHover;
+      &:hover,
+      &:focus {
+        background-color: @cTopmenuBgHover;
+      }
+    }
+  }//*/
+}
+
+/* Extra-small devices (smartphones, 767px and less) */
+@media (max-width: @screen-xs-max) {
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+}

@@ -1,0 +1,73 @@
+// main: ../template.less
+
+// Bootstrap breakpoints
+@screen-xs-max: 767px;
+@screen-sm-min: 768px;
+@screen-md-min: 992px;
+@screen-lg-min: 1200px;
+
+// functions and classes
+.ease(@duration:.3s) {
+  .transition(@duration, ease-in-out);
+}
+
+.inline {
+  display: inline-block;
+}
+
+// ##############################
+// # Effects
+// ##############################
+
+// transition on menu links
+.nav a {
+  .ease();
+}
+
+// ##############################
+// # HTML elements
+// ##############################
+
+body {
+  background-color: @cBackgroundBody;
+  font-family: @fText;
+  font-size: @sText;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: @fHeading;
+}
+
+a {
+  color: @cBase;
+}
+
+img {
+  max-width: 100%;
+}
+
+// #########################
+// # Bootstrap pagination
+// #########################
+.pagination {
+  > li > a {
+    color: @cSecondary;
+    &:hover,
+    &:focus {
+      color: @cSecondary;
+    }
+  }
+  > .active > a,
+  > .active > a:hover,
+  > .active > a:focus {
+    color: white;
+    background: @cSecondary;
+    border-color: #DDD;
+  }
+  > .counter {
+    display: none;
+    float: none !important;
+    margin: 0;
+    text-align: center;
+  }
+}

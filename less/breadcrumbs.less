@@ -1,0 +1,42 @@
+// main: template.less
+
+/**
+ * This LESS file contains style directives related to the breadcrumb bar.
+ *
+ * Style directives are mobile-first.
+ * On larger devices additional style directives may make use of additional space.
+ */
+
+.breadcrumb {
+  background-color: white;
+  .rounded(0);
+  .divider {
+    display: none;
+  }
+  li:before {
+    display: none;
+  }
+  li:after {
+    padding: 0 5px;
+    color: #CCC;
+    content: "/\00a0";
+  }
+  li:first-child:after,
+  li:last-child:after {
+    display: none;
+  }
+}
+
+/* Extra-small devices (smartphones, 767px and less) */
+@media (max-width: @screen-xs-max) {
+  .breadcrumb {
+    margin-bottom: 15px;
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  .breadcrumb {
+    margin-bottom: 30px;
+  }
+}

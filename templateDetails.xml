@@ -1,0 +1,39 @@
+<extension version="3.2" type="template" client="site" method="upgrade">
+  <name>tsb2017</name>
+  <version>1.0</version>
+  <creationDate>09/11/2017</creationDate>
+  <author>Sebastian Schlicht</author>
+  <authorEmail>sebastian@jablab.de</authorEmail>
+  <copyright>Copyright (C) 2017 - JabLab GbR, Inh. Sebastian Schlicht und Markus Münzel. All rights reserved.</copyright>
+  <description>TPL_TSB2017_XML_DESCRIPTION</description>
+  <files>
+    <filename>favicon.png</filename>
+    <filename>index.php</filename>
+    <filename>templateDetails.xml</filename>
+    <filename>template_preview.png</filename>
+    <filename>template_thumbnail.png</filename>
+    <folder>css</folder>
+    <folder>html</folder>
+    <folder>images</folder>
+    <folder>js</folder>
+    <folder>language</folder>
+  </files>
+  <positions>
+    <position>debug</position>
+    <position>topmenu</position>
+    <position>search</position>
+    <position>mainmenu</position>
+    <position>slider</position>
+    <position>intro</position>
+    <position>sidebar</position>
+    <position>content-before</position>
+    <position>content-after</position>
+    <position>footer</position>
+  </positions>
+  <languages folder="language">
+    <language tag="en-GB">en-GB/en-GB.tpl_tsb2017.ini</language>
+    <language tag="en-GB">en-GB/en-GB.tpl_tsb2017.sys.ini</language>
+    <language tag="de-DE">de-DE/de-DE.tpl_tsb2017.ini</language>
+    <language tag="de-DE">de-DE/de-DE.tpl_tsb2017.sys.ini</language>
+  </languages>
+</extension>
