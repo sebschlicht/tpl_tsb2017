@@ -6,7 +6,7 @@
 
 #sidebar {
   .module-item {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     > h3 {
       padding: 12px 20px;
       margin: 0;
@@ -20,6 +20,31 @@
     .content {
       padding: 15px;
       background-color: #FFFFFF;
+    }
+  }
+  
+  // Buttons
+  .custom {
+    text-align: center;
+    a {
+      display: inline-block;
+      padding: 12px 12px 10px;
+      color: @cTextContrast;
+      background-color: @cSecondary;
+      font-size: 12px;
+      text-transform: uppercase;
+      vertical-align: top;
+      .rounded(3px);
+      &:hover,
+      &:focus {
+        color: @cTextContrast;
+        background-color: @cSecondary;
+      }
+      .fa {
+        margin-right: 10px;
+        font-size: 18px;
+        vertical-align: top;
+      }
     }
   }
 }

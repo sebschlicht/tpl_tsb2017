@@ -24,7 +24,6 @@
     }
     img {
       width: 100%;
-      min-height: 173px;
     }
   }
   .overlay {
@@ -42,16 +41,23 @@
 
 /* Extra-small devices (smartphones, 767px and less) */
 @media (max-width: @screen-xs-max) {
+  // hide on small devices
+  #intro {
+    display: none;
+  }
 }
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) {
   // reduce horizontal spacing
   #intro .nav > li {
-    padding-left: 10px;
+    padding-left: 8px;
     padding-right: 0;
+    &:first-child {
+      padding-left: 15px;
+    }
     &:last-child {
-      padding-right: 10px;
+      padding-right: 15px;
     }
   }
 }
