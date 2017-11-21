@@ -13,22 +13,21 @@ jQuery( document ).ready(function () {
   
   // hide ugly banner links
   var onBannerClick = function() {
-    var $link = jQuery( this ),
-        href = $link.attr( 'data-href' );
-    if ( href ) {
-      // swap tracking URL back
-      $link.attr( 'href', href );
-    }
+    var $link = jQuery( this );
+    
+    // swap tracking URL back
+    $link.attr( 'href', $link.attr( 'data-trackUrl' ) );
+    
+    // swap target URL in again, after the click has been processed
+    setTimeout( function() {
+        $link.attr( 'href', $link.attr( 'data-targetUrl' ) );
+    }, 10 );
   };
   jQuery( '.banneritem' ).each( function( i, e ) {
-    console.log('banner found');
     var $banner = jQuery( e );
     var $a = $banner.find( 'a' );
-    var $realUrl = $banner.find( '.event-target' );
-    if ( $realUrl ) {  
-      var trackUrl = $a.attr( 'href' );
-      $a.attr( 'href', $realUrl.val() );
-      $a.attr( 'data-href', trackUrl );
+    if ( $a.attr( 'data-trackUrl' ) && $a.attr( 'data-targetUrl' ) ) {  
+      $a.attr( 'href', $a.attr( 'data-targetUrl' ) );
       $a.on('click', onBannerClick);
     }
   } );
