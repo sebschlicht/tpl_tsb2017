@@ -5,8 +5,32 @@
 // #########################
 
 #footer-wrapper {
-  padding: 60px 0 0;
+  padding: 60px 0 40px;
   background-color: @cBase;
+}
+
+#footer {
+  h3 {
+    padding: 10px 10px;
+    margin: 0 0 15px;
+    color: @cTextContrast;
+    background-color: @cSecondary;
+    font-size: 16px;
+    text-transform: uppercase;
+    .rounded(3px);
+  }
+  a {
+    .ease();
+    display: inline-block;
+    padding: 5px 10px;
+    color: @cTextContrast;
+    background-color: transparent;
+    &:hover {
+      color: @cSecondary;
+      background-color: transparent;
+      text-decoration: underline;
+    }
+  }
 }
 
 /* Extra-small devices (smartphones, 767px and less) */
