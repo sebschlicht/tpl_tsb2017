@@ -131,6 +131,7 @@ $doc->addScript($tmplDir . '/js/template.js');
   </div>
 
   <!-- footer -->
+  <?php if ($this->countModules('footer')) : ?>
   <div id="footer-wrapper" class="container-fluid">
     <div id="footer" class="container">
       <div class="row">
@@ -141,6 +142,7 @@ $doc->addScript($tmplDir . '/js/template.js');
       </div>
     </div>
   </div>
+  <?php endif; ?>
   
   <div class="debug">
     <jdoc:include type="modules" name="debug" style="none" />
