@@ -25,6 +25,34 @@
     }
   }
   
+  // Banner
+  .bannergroup {
+    .banneritem {
+      width: 210px;
+      margin: 0 auto;
+    }
+    .banneritem:not(:first-child),
+    &.module-stack-body .banneritem:first-child {
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid #E4E8EE;
+    }
+  }
+  
+  // Modul-Stack
+  // Modules can be stacked to build the partner module group.
+  // HTML:
+  // .module-item.module-stack-head (1)
+  // .module-item.module-stack-body (*)
+  // .module-item.module-stack-tail (1)
+  .module-item.module-stack-head,
+  .module-item.module-stack-body {
+    margin-bottom: 0;
+  }
+  .module-item.module-stack-body > .content {
+    padding-top: 1px; // 0 leads to ghost spacing
+  }
+  
   // Buttons
   a.button {
     display: inline-block;
