@@ -4,6 +4,51 @@
 // # Mobile-first directives
 // #########################
 
+.article {
+  .header {
+    padding: 20px;
+    color: @cTextContrast;
+    background-color: @cBase;
+    .page-header h2 {
+      margin: 20px 0 0;
+      color: @cTextContrast;
+    }
+    .article-info {
+      margin: 0;
+      text-align: right;
+      text-transform: uppercase;
+      dd {
+        // TODO override, don't use dds
+        display: inline-block;
+        padding-right: 5px;
+        margin-right: 5px;
+        border-right: 1px solid @cTextContrast;
+        &:last-child {
+          padding-right: 0;
+          margin-right: 0;
+          border-right: none;
+        }
+      }
+      a {
+        color: @cSecondary;
+        &:hover,
+        &:focus {
+          color: @cSecondary;
+          text-decoration: underline;
+        }
+      }
+    }
+    img {
+      width: 100%;
+      border-bottom: 5px solid @cSecondary;
+    }
+  }
+  .content {
+    padding: 10px 20px;
+    background-color: #FFFFFF;
+  }
+}
+
 /* Extra-small devices (smartphones, 767px and less) */
 @media (max-width: @screen-xs-max) {
 }
