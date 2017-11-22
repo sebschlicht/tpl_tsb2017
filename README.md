@@ -32,3 +32,6 @@ The Yoko theme again is licensed as GNU GPL v2 - and so is this repository.
 
 ## Development
 The LESS compilation has been automatized using the `Brackets` plugin `LESS AutoCompile`.
+
+## License
+Except for images, this template is licensed under GNU GPL v2 - just like the cloned Wordpress template.
