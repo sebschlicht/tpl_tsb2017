@@ -6,9 +6,11 @@ The Yoko theme again is licensed as GNU GPL v2 - and so is this repository.
 ## Positions
 * `topmenu`: section menu
 * `mainmenu`: main menu within each section
+ * modules need `nav-pill` class for horizontal item stacking
 * `slider`: slider right below the main menu
 * `sidebar`: sidebar to the left of/below the content
 * `footer`: page footer for less commonly accessed links
+ * modules need `col`-classes for horizontal stacking
 
 ## Overrides
 * `com_content.article.news`: single news blog item
@@ -21,7 +23,7 @@ The Yoko theme again is licensed as GNU GPL v2 - and so is this repository.
 * `layout.joomla.content.blog_info_block`: section news blog item details
 
 ## Required Extensions
-* Smart Slider 3: slider used on the main entry points (section news)
+* Smart Slider 3: [slider](https://github.com/sebschlicht/www-tsb2017/wiki/Slider) used at main entry points
 
 ## Technologies
 * CSS 3: style elements and transition between their states
