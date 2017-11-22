@@ -35,6 +35,12 @@
 
 /* Extra-small devices (smartphones, 767px and less) */
 @media (max-width: @screen-xs-max) {
+  #footer {
+    // vertical spacing between footer modules
+    .jmoddiv:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
 }
 
 /* Small devices (tablets, 768px and up) */
