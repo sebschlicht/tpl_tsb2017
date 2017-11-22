@@ -6,7 +6,7 @@ The Yoko theme again is licensed as GNU GPL v2 - and so is this repository.
 ## Positions
 * `topmenu`: section menu
 * `mainmenu`: main menu within each section
-  * modules need `nav-pill` class for horizontal item stacking
+  * modules need the ` navbar-nav` menu class suffix for horizontal item stacking
 * `slider`: slider right below the main menu
 * `sidebar`: sidebar to the left of/below the content
 * `footer`: page footer for less commonly accessed links
@@ -25,7 +25,10 @@ The Yoko theme again is licensed as GNU GPL v2 - and so is this repository.
 ## Required Extensions
 * Smart Slider 3: [slider](https://github.com/sebschlicht/www-tsb2017/wiki/Slider) used at main entry points
 
-## Technologies
+## Frontend-Technologies
 * CSS 3: style elements and transition between their states
 * Bootstrap 3: basic style directives and responsive design
 * jQuery: add state classes to elements
+
+## Development
+The LESS compilation has been automatized using the `Brackets` plugin `LESS AutoCompile`.
