@@ -1,0 +1,73 @@
+// main: template.less
+
+// #########################
+// # Mobile-first directives
+// #########################
+
+#slider {
+  #n2-ss-3 {
+    .textbox {
+      position: absolute;
+      width: auto;
+      max-width: 550px;
+      height: auto;
+      max-height: 320px;
+      overflow: hidden;
+      left: 350px;
+      bottom: 100px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, .75);
+      border-left: 5px solid @cSecondary;
+    }
+    .n2-ss-section-main-content {
+      display: block;
+      height: auto;
+      padding: 0 !important;
+      
+      .n2-ss-layer {
+        font-family: 'Oswald';
+      }
+      .header > div {
+        margin: 0 0 20px;
+        font-size: 32px;
+        text-align: left;
+        text-transform: uppercase;
+        line-height: 1;
+      }
+      .text {
+        position: relative;
+        max-height: 100px;
+        overflow: hidden !important;
+        -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, .2)));
+        > div > p {
+          font-size: 16px;
+          text-align: left;
+          &:first-child {
+            margin-bottom: 10px;
+          }
+        }
+      }
+      .readmore {
+        padding-top: 20px;
+        text-align: left;
+      }
+    }
+  }
+}
+
+/* Extra-small devices (smartphones, 767px and less) */
+@media (max-width: @screen-xs-max) {
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+}
+

@@ -14,6 +14,7 @@
 @import "footer.less";
 
 @import "intromenu.less";
+@import "slider.less";
 
 // import view-specific template components
 @import "views/blog.less";
@@ -37,63 +38,6 @@
 // # TODO
 // * article view
 // * gallery extension design
-// * slider
-
-#slider {
-  #n2-ss-3 {
-    .textbox {
-      position: absolute;
-      height: auto;
-      left: 350px;
-      bottom: 100px;
-    }
-    .n2-ss-section-main-content {
-      display: block;
-      max-width: 480px;
-      height: auto;
-      min-height: 0;
-      max-height: 320px;
-      padding: 20px !important;
-      background-color: @cBase;
-      border-left: 5px solid @cSecondary;
-      
-      .n2-ss-layer {
-        font-family: 'Oswald';
-      }
-      .header > div {
-        margin: 0 0 20px;
-        font-size: 32px;
-        text-align: left;
-        text-transform: uppercase;
-        line-height: 1;
-      }
-      .text {
-        position: relative;
-        max-height: 150px;
-        overflow: hidden !important;
-        > div > p {
-          font-size: 16px;
-          text-align: left;
-        }
-        &:after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          width: 100%;
-          height: 50px;
-          .gradient(@cBase, rgba(41, 42, 44, .9), rgba(41, 42, 44, .2));
-        }
-      }
-      .readmore {
-        padding-top: 20px;
-        text-align: left;
-      }
-    }
-  }
-}
-
 
 #content-wrapper {
   margin-top: 30px;
