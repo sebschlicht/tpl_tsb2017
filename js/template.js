@@ -46,57 +46,7 @@ jQuery( document ).ready(function () {
       }
     }, 5 );
   } );
-  
-  // enable submenus
-  var $mobileMenu = jQuery( '#bs-example-navbar-collapse-1' );
-  var $activeMenu = null;
-  jQuery( '.deeper > a' ).click( function ( e ) {
-    // abort if in mobile view
-    if ( isXs() ) {
-      return true;
-    }
-    // show/hide menu
-    var $menu = jQuery( this ).parent();
-    showSubmenu( $menu );
-    e.stopPropagation();
-    return false;
-  } );
-  
-  // close submenus on background click
-  var $document = jQuery( document );
-  $document.click( function (e) {
-    var $e = jQuery( this );
-    if ( !$e.is( '.nav a' ) ) {
-        if ( $activeMenu !== null ) {
-          hideSubmenu( $activeMenu );
-        }
-    }
-    return true;
-  } );
-  
-  function showSubmenu( $menu ) {  
-    if ( $menu.is( $activeMenu ) ) {
-      // menu already active -> hide instead
-      hideSubmenu( $activeMenu );
-    } else {
-      // hide active menu, if any
-      if ( $activeMenu !== null ) {
-        // TODO limits to 2-level menu
-        hideSubmenu( $activeMenu );
-      }
-      // show menu
-      $menu.addClass( 'menu-visible' );
-      $activeMenu = $menu;
-      $menu.children( 'a' ).blur();
-    }
-  }
-  
-  function hideSubmenu( $menu ) {
-    $menu.removeClass( 'menu-visible' );
-    $activeMenu = null;
-    $menu.children( 'a' ).blur();
-  }
-  
+    
   function isXs() {
     return jQuery( '#isXs' ).is( ':visible' );
   }
