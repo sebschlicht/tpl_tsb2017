@@ -76,7 +76,12 @@
   }
   // Partner-Button
   a.btn-partner {
+    .ease();
     font-size: 15px;
+    &:hover {
+      background-color: darken(@cSecondary, 10%);
+      text-decoration: none;
+    }
   }
 }
 

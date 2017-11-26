@@ -5,17 +5,38 @@
 // #########################
 
 .article {
+  position: relative;
   background-color: #FFFFFF;
-  .page-header h2 {
-    .view-heading;
-  }
   .content {
-    padding: 10px 20px;
+    padding: 20px;
+    color: #000000;
+    line-height: 23.1px;
+    h2:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.default-article {
+  .header {
+    .icons {
+      top: 0;
+      right: 0;
+      button {
+        padding: 10px 15px;
+        .rounded(0);
+      }
+    }
+    .page-header h2 {
+      .view-heading;
+    }
   }
 }
 
 .news-article {
+  // full-width colored header with article image and details
   .header {
+    position: relative;
     padding: 20px;
     color: @cTextContrast;
     background-color: @cBase;
@@ -24,15 +45,17 @@
       color: @cTextContrast;
     }
     .article-info {
-      margin: 0;
+      margin: 20px 0 0;
+      font-size: 12px;
       text-align: right;
       text-transform: uppercase;
       dd {
         // TODO override, don't use dds
         display: inline-block;
-        padding-right: 5px;
+        padding-right: 8px;
         margin-right: 5px;
         border-right: 1px solid @cTextContrast;
+        line-height: 1;
         &:last-child {
           padding-right: 0;
           margin-right: 0;
@@ -53,9 +76,11 @@
       border-bottom: 5px solid @cSecondary;
     }
   }
+  // subtitle comparatively small
   .content {
-    padding: 10px 20px;
-    background-color: #FFFFFF;
+    h2:first-child {
+      font-size: 20px
+    }
   }
 }
 
