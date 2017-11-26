@@ -18,7 +18,8 @@ $sitename = $app->get('sitename');
 $tmplDir = $this->baseurl . '/templates/' . $this->template;
 
 // load Fonts
-$doc->addStyleSheet("https://fonts.googleapis.com/css?family=Raleway:200,300,400,800");
+//$doc->addStyleSheet("https://fonts.googleapis.com/css?family=Raleway:200,300,400,800");
+$doc->addStyleSheet("https://fonts.googleapis.com/css?family=Oswald");
 $doc->addStyleSheet("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
 
 // add stylesheets

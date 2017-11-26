@@ -24,11 +24,9 @@
       height: auto;
       padding: 0 !important;
       
-      .n2-ss-layer {
-        font-family: 'Oswald';
-      }
       .header > div {
         margin: 0 0 20px;
+        font-family: 'Oswald';
         font-size: 32px;
         text-align: left;
         text-transform: uppercase;
@@ -36,10 +34,10 @@
       }
       .text {
         position: relative;
-        max-height: 100px;
+        max-height: 104px;
         overflow: hidden !important;
-        -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, .2)));
         > div > p {
+          font-family: 'Oswald';
           font-size: 16px;
           text-align: left;
           &:first-child {
@@ -47,9 +45,17 @@
           }
         }
       }
+      .text:not(.cut) {
+        -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, .2)));
+      }
       .readmore {
         padding-top: 20px;
         text-align: left;
+        a {
+          padding: 8px 15px;
+          font-family: 'Oswald';
+          font-size: 16px;
+        }
       }
     }
   }
