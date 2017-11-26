@@ -1,0 +1,14 @@
+{
+  "jshint.options": {
+    "browser": true
+  },
+  "jshint.globals": {
+    "jQuery": false
+  },
+  "language": {
+    "javascript": {
+      "linting.prefer": ["JSHint"],
+      "linting.usePreferredOnly": true
+    }
+  }
+}
