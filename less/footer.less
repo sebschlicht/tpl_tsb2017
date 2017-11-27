@@ -10,7 +10,7 @@
 }
 
 #footer {
-  h3 {
+  h3:not(.partner) {
     padding: 10px 10px;
     margin: 0 0 15px;
     color: @cTextContrast;
@@ -29,6 +29,17 @@
       color: @cSecondary;
       background-color: transparent;
       text-decoration: underline;
+    }
+  }
+  h3.partner {
+    .view-heading;
+    padding-left: 10px;
+    margin: 0 0 18px;
+    .drop-shadow();
+  }
+  .partner {
+    a {
+      padding: 0;
     }
   }
 }
