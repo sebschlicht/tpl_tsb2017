@@ -38,7 +38,7 @@ JLoader::register('BannerHelper', JPATH_ROOT . '/components/com_banners/helpers/
 					<?php if ($target == 1) : ?>
 						<?php // Open in a new window ?>
 						<a
-							href="<?php echo $link; ?>" target="_blank" rel="noopener noreferrer"
+							href="<?php echo $item->clickurl; ?>" target="_blank" rel="noopener noreferrer"
 							title="<?php echo htmlspecialchars($item->name, ENT_QUOTES, 'UTF-8'); ?>"
                             data-targetUrl="<?php echo $item->clickurl; ?>"
                             data-trackUrl="<?php echo $link; ?>">
