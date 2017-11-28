@@ -8,7 +8,7 @@
 @cMenuHoverText: #FFFFFF;
 
 .header-wrapper {
-  margin: 0;
+  margin-bottom: 0;
   border: none;
 }
 
@@ -34,14 +34,13 @@
 .navbar-right {
   padding-right: 0;
   .navbar-nav {
+    margin: 0;
     // menu items
     li {
-      position: relative;
       a {
-        padding: 47px 20px 46px;
+        padding: 10px 20px;
         color: #AEAEAE;
         background-color: #FFFFFF;
-        border-left: 1px solid #E1E1E1;
         font-size: 15px;
         font-weight: 700;
         text-transform: uppercase;
@@ -52,8 +51,125 @@
         border-right: 1px solid #E1E1E1;
       }
     }
+    
+    // hovered / active menu items
+    .active > a,
+    a:hover,
+    a:focus {
+      color: @cMenuHoverText;
+      background-color: @cMenuHover;
+      border-color: @cMenuHover;
+      text-decoration: none;
+      // revert Bootstrap override
+      &:hover,
+      &:focus {
+        color: @cMenuHoverText;
+        background-color: @cMenuHover;
+        border-color: @cMenuHover;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/* Extra-small devices (smartphones, 767px and less) */
+@media (max-width: @screen-xs-max) {
+  // remove annoying horizontal spacing
+  .navbar > .container {
+    overflow: hidden;
+  }
+  // horizontal padding to screen
+  .navbar-header {
+    padding: 0 15px;
+  }
+  // full-width submenus
+  .navbar .navbar-right {
+    a {
+      position: relative;
+    }
+    a:before {
+      position: absolute;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      height: 9px;
+      content: "\f054";
+      margin: auto 0;
+      color: @cSecondary;
+      font-family: 'FontAwesome';
+      font-size: 8px;
+      font-weight: normal;
+      line-height: 1;
+    }
+    .nav-child {
+      margin: 0;
+      padding: 0;
+      a {
+        display: block;
+        padding-left: 40px;
+        text-transform: none;
+        &:before {
+          left: 30px;
+        }
+      }
+      .nav-child a {
+        padding-left: 60px;
+        &:before {
+          left: 50px;
+        }
+      }
+    }
+  }
+  // limit logo height
+  .navbar img {
+    max-height: 60px;
+  }
+  // menu button (h:35)
+  .navbar .navbar-toggle {
+    .ease();
+    .rounded(0);
+    margin: 20px;
+    background: transparent;
+    border: none;
+    .icon-bar {
+      .ease();
+      .rounded(3px);
+      width: 28px;
+      height: 3px;
+    }
+    &:hover,
+    &:focus {
+      background: transparent;
+    }
+    
+    &.closed {
+      .upper-icon-bar {
+        .transform(translateY(7px) rotate(45deg));
+      }
+      .lower-icon-bar {
+        .transform(translateY(-7px) rotate(-45deg));
+      }
+      .middle-icon-bar {
+        .transform(scale(0));
+      }
+    }
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  .navbar-right .navbar-nav {
+    // horizontal border between elements
+    li {
+      position: relative;
+      a {
+        padding: 47px 20px 46px;
+        border-left: 1px solid #E1E1E1;
+      }
+    }
     // submenu indicator
-    .deeper > a {
+    li.deeper > a {
       &:after {
         .ease();
         content: "";
@@ -70,25 +186,17 @@
         .rotation(225deg);
       }
     }
-    // hovered / active menu items
-    li:hover,
-    .active {
-      > a {
-        color: @cMenuHoverText;
-        background-color: @cMenuHover;
-        border-color: @cMenuHover;
-        // lighten submenu indicator
-        &:after {
-          border-color: @cMenuHoverText;
-        }
-        // revert Bootstrap override
-        &:hover,
-        &:focus {
-          color: @cMenuHoverText;
-          background-color: @cMenuHover;
-        }
+    li.deeper:hover > a,
+    li.deeper.active > a,
+    li.deeper > a:focus {
+      color: @cTextContrast;
+      background-color: @cSecondary;
+      // lighten submenu indicator
+      &:after {
+        border-color: @cMenuHoverText;
       }
     }
+    
     // submenus
     li > .nav-child {
       .ease();
@@ -163,18 +271,6 @@
       left: 100%;
     }
   }
-}
-
-/* Extra-small devices (smartphones, 767px and less) */
-@media (max-width: @screen-xs-max) {
-  // horizontal padding to screen
-  .navbar-header {
-    padding: 0 15px;
-  }
-}
-
-/* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) {
 }
 
 /* Medium devices (desktops, 992px and up) */

@@ -4,74 +4,115 @@
 // # Mobile-first directives
 // #########################
 
-#slider {
-  #n2-ss-3 {
-    .textbox {
-      position: absolute;
-      width: auto;
-      max-width: 550px;
-      height: auto;
-      max-height: 320px;
-      overflow: hidden;
-      left: 350px;
-      bottom: 100px;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, .75);
-      border-left: 5px solid @cSecondary;
-    }
-    .n2-ss-section-main-content {
-      display: block;
-      height: auto;
-      padding: 0 !important;
-      
-      .header > div {
-        margin: 0 0 20px;
-        font-family: 'Oswald';
-        font-size: 32px;
-        text-align: left;
-        text-transform: uppercase;
-        line-height: 1;
-      }
-      .text {
-        position: relative;
-        max-height: 104px;
-        overflow: hidden !important;
-        h2 {
-          margin: 0 0 10px;
-          color: @cTextContrast;
-          text-align: left;
-        }
-        > div > p {
-          font-family: 'Oswald';
-          font-size: 16px;
-          text-align: left;
-          &:first-child {
-            margin-bottom: 10px;
-          }
-        }
-      }
-      .text:not(.cut) {
-        -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, .2)));
-      }
-      .readmore {
-        padding-top: 20px;
-        text-align: left;
-        a {
-          padding: 8px 15px;
-          font-family: 'Oswald';
-          font-size: 16px;
-        }
+/* Extra-small devices (smartphones, 767px and less) */
+@media (max-width: @screen-xs-max) {
+  // hide slider text
+  #slider {
+    #n2-ss-3 {
+      .textbox {
+        display: none;
       }
     }
   }
 }
 
-/* Extra-small devices (smartphones, 767px and less) */
-@media (max-width: @screen-xs-max) {
-}
-
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) {
+  // show slider text in a box
+  #slider {
+    #n2-ss-3 {
+      // absolutely positioned, semi-transparent text box
+      .textbox {
+        position: absolute;
+        width: auto;
+        height: auto;
+        overflow: hidden !important;
+        background-color: rgba(0, 0, 0, .75);
+        border-left: 5px solid @cSecondary;
+        // reset main slider content wrapper
+        .n2-ss-section-main-content {
+          display: block;
+          height: auto;
+          padding: 0 !important;
+          // slider text box header
+          .header > div {
+            font-family: 'Oswald';
+            text-align: left;
+            text-transform: uppercase;
+            line-height: 1;
+          }
+          // slider text
+          .text {
+            position: relative;
+            overflow: hidden !important;
+            // fade out if text cutting failed
+            &:not(.cut) {
+              -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, .2)));
+            }
+            // (optional) subtitle
+            h2 {
+              color: @cTextContrast;
+              font-family: 'Oswald';
+              text-align: left;
+            }
+            // text paragraphs
+            > div > p {
+              font-family: 'Oswald';
+              text-align: left;
+            }
+          }
+          // button read more
+          .readmore {
+            text-align: left;
+            a {
+              .ease();
+              font-family: 'Oswald';
+              &:hover {
+                background-color: darken(@cSecondary, 10%);
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+      // small text box with small paddings
+      .textbox {
+        max-width: 550px;
+        max-height: 220px;
+        left: 10%;
+        top: 15%;
+        padding: 10px 20px;
+        // slider text box header
+        .header > div {
+          margin: 0 0 20px;
+          font-size: 32px;
+        }
+        // slider text
+        .text {
+          max-height: 80px;
+          // (optional) subtitle
+          h2 {
+            margin: 0 0 10px;
+          }
+          // text paragraphs
+          > div > p {
+            font-size: 16px;
+            &:first-child {
+              margin-bottom: 10px;
+            }
+          }
+        }
+        // button read more
+        .readmore {
+          padding-top: 20px;
+          a {
+            padding: 5px 10px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -80,5 +121,20 @@
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: @screen-lg-min) {
+  // large text box and paddings
+  #slider {
+    #n2-ss-3 {
+      .textbox {
+        max-height: 320px;
+        top: auto;
+        left: 350px;
+        bottom: 20%;
+        padding: 20px;
+        .text {
+          //max-height: 104px;
+        }
+      }
+    }
+  }
 }
 
