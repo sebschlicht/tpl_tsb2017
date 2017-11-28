@@ -22,11 +22,13 @@
     margin: 5px 0 25px;
     text-align: center;
     a {
+      display: inline-block;
       padding: 6px 12px;
-      margin-right: 15px;
+      margin: 0 10px 10px 0;
       color: @cTextContrast;
       background-color: @cSecondary;
       font-size: 16px;
+      word-break: keep-all;
       .rounded(3px);
       &:hover,
       &:focus {
@@ -44,6 +46,8 @@
   // TODO better to do it in component stylesheet?
   .nuliga {
     font-size: 12px;
+    overflow-x: scroll;
+    overflow-y: hidden;
     table td,
     table th {
       padding: 8px 16px;

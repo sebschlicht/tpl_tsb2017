@@ -17,7 +17,7 @@ JLoader::register('BannerHelper', JPATH_ROOT . '/components/com_banners/helpers/
 <?php endif; ?>
 
 <?php foreach ($list as $item) : ?>
-	<div class="banneritem col-xs-12 col-sm-6">
+	<div class="banneritem col-xs-6">
 		<?php $link = JRoute::_('index.php?option=com_banners&task=click&id=' . $item->id); ?>
 		<?php if ($item->type == 1) : ?>
 			<?php // Text based banners ?>
