@@ -2,12 +2,17 @@ jQuery.noConflict();
 jQuery(document).ready(function () {
   
   // toggle mobile menu toggle class
-  var onNavbarToggleClick = function () {
+  var onNavbarToggleClick = function ( e ) {
     var $toggle = jQuery(this),
-        $target = jQuery($toggle.attr('data-target'));
-    if (!$target.hasClass('collapsing')) {
-      $toggle.toggleClass('open').toggleClass('closed');
-    }
+        $menu = jQuery($toggle.attr('data-menu'));
+    
+    $toggle.toggleClass('open-menu').toggleClass('close-menu');
+    $menu.toggleClass('expanded-menu');
+    var targetHeight = $toggle.hasClass( 'close-menu' ) ? $menu[0].scrollHeight : '';
+    $menu.css( 'height', targetHeight );
+    
+    e.stopPropagation();
+    return false;
   };
   jQuery( '.navbar-toggle' ).on( 'click', onNavbarToggleClick );
   

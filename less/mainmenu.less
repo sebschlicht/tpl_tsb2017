@@ -7,28 +7,35 @@
 @cMenuHover: #D4312E;
 @cMenuHoverText: #FFFFFF;
 
+// Structure
+// .header-wrapper .navbar
+// - .container
+// -- .navbar-header
+// --- .navbar-toggle
+// --- .navbar-brand
+// -- navbar-right
+
 .header-wrapper {
   margin-bottom: 0;
   border: none;
-}
-
-.navbar > .container {
-  padding: 0;
+  > .container {
+    padding: 0;
+  }
 }
 
 .navbar-header {
   padding: 0 0 0 15px;
-}
-.navbar-brand {
-  height: auto;
-}
-.navbar-logo {
-  float: left;
-}
-.navbar-title {
-  float: left;
-  padding-top: 30px;
-  margin-left: 15px;
+  .navbar-brand {
+    height: auto;
+  }
+  .navbar-logo {
+    float: left;
+  }
+  .navbar-title {
+    float: left;
+    padding-top: 30px;
+    margin-left: 15px;
+  }
 }
 
 .navbar-right {
@@ -143,7 +150,7 @@
       background: transparent;
     }
     
-    &.closed {
+    &.close-menu {
       .upper-icon-bar {
         .transform(translateY(7px) rotate(45deg));
       }
@@ -154,6 +161,13 @@
         .transform(scale(0));
       }
     }
+  }
+  // mobile menu
+  .navbar .navbar-right {
+    .ease();
+    display: block;
+    height: 0;
+    overflow: hidden;
   }
 }
 

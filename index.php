@@ -28,10 +28,8 @@ $doc->addStyleSheet("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstr
 $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/template.css');
 
 // add JavaScript
-//JHtml::_('jquery.framework', false);
 //$doc->addScript('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js');
 JHtml::_('bootstrap.framework');
-//JHtml::_('jquery.framework', false);
 //$doc->addScript($this->baseurl . '/media/jui/js/bootstrap.min.js');
 $doc->addScript($tmplDir . '/js/template.js');
 
@@ -67,7 +65,7 @@ $doc->addScript($tmplDir . '/js/template.js');
     <div class="container">
       <!-- brand and menu toggle -->
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed open" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <button type="button" class="navbar-toggle collapsed open-menu" data-toggle="collapse" data-menu="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only"><?php echo JText::_('TPL_TSB2017_TOGGLE_MENU'); ?></span>
           <span class="icon-bar upper-icon-bar"></span>
           <span class="icon-bar middle-icon-bar"></span>
