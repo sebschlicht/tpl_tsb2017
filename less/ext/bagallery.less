@@ -1,0 +1,66 @@
+// main: ../template.less
+
+// #########################
+// # Mobile-first directives
+// #########################
+
+.content .ba-gallery {
+  padding: 0;
+  .row-fluid {
+    margin: 0;
+  }
+  .ba-goback {
+    position: relative;
+    margin: 0 0 20px;
+    min-height: 46px;
+    > a {
+      .ease();
+      position: absolute;
+      display: inline-block;
+      padding: 10px;
+      margin: auto 0;
+      top: 0;
+      bottom: 0;
+      width: 24px;
+      height: 24px;
+      background-color: #EEE;
+      &:hover {
+        background-color: @cSecondary;
+      }
+    }
+    > h2 {
+      padding-left: 60px;
+      font-size: 24px;
+    }
+    > .categories-description {
+      margin: 0;
+    }
+    p:last-child {
+      margin: 0;
+    }
+  }
+}
+
+/* Extra-small devices (smartphones, 767px and less) */
+@media (max-width: @screen-xs-max) {
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  // headers usually fit within a single row
+  .content .ba-gallery {
+    .ba-goback {
+      > h2 {
+        padding-top: 6px;
+      }
+    }
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+}

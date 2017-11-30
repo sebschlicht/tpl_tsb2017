@@ -23,11 +23,11 @@
     text-align: center;
     a {
       display: inline-block;
-      padding: 6px 12px;
-      margin: 0 10px 10px 0;
+      padding: 4px 6px;
+      margin: 0 5px 5px 0;
       color: @cTextContrast;
       background-color: @cSecondary;
-      font-size: 16px;
+      font-size: 12px;
       word-break: keep-all;
       .rounded(3px);
       &:hover,
@@ -141,6 +141,21 @@
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) {
+  // teambuttons can easily fit horizontally
+  .handball-team .team-buttons {
+    a {
+      padding: 6px 12px;
+      margin: 0 10px 10px 0;
+      font-size: 16px;
+    }
+  }
+  // NuLiga tables can take slightly more padding
+  .handball-team .nuliga table {
+    td,
+    th {
+      padding: 6px 12px;
+    }
+  }
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -149,5 +164,12 @@
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: @screen-lg-min) {
+  // NuLiga tables can take large paddings
+  .handball-team .nuliga table {
+    td,
+    th {
+      padding: 8px 16px;
+    }
+  }
 }
 

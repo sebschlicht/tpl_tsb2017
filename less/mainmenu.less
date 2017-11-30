@@ -200,11 +200,13 @@
         .rotation(225deg);
       }
     }
+    // highlight parental menu items of active item to keep track of the path
     li.deeper:hover > a,
     li.deeper.active > a,
     li.deeper > a:focus {
       color: @cTextContrast;
       background-color: @cSecondary;
+      border-color: @cSecondary;
       // lighten submenu indicator
       &:after {
         border-color: @cMenuHoverText;
