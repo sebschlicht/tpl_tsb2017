@@ -25,7 +25,9 @@
       height: 24px;
       background-color: #EEE;
       &:hover {
-        background-color: @cSecondary;
+        // ugly but we have to as the styles are set inline
+        color: #FFF !important;
+        background-color: @cSecondary !important;
       }
     }
     > h2 {
