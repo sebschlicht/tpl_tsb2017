@@ -14,10 +14,6 @@
   background-color: #292A2C;
 }
 
-.topbar {
-  padding: 0;
-}
-
 .topbar-menu {
   .navbar-nav {
     margin: 0;
@@ -40,20 +36,15 @@
       }
     }
   }
-  /* disable topbar active item marker
-  .nav > li.current {
-    a {
-      background-color: @cTopmenuBgHover;
-      &:hover,
-      &:focus {
-        background-color: @cTopmenuBgHover;
-      }
-    }
-  }//*/
 }
 
 /* Extra-small devices (smartphones, 767px and less) */
 @media (max-width: @screen-xs-max) {
+  // disable padding within topbar
+  .topbar-menu,
+  .topbar-search {
+    padding: 0;
+  }
   // tiny topmenu
   .topbar-menu {
     .nav > li a {

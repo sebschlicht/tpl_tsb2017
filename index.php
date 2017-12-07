@@ -64,29 +64,31 @@ $doc->addScript($tmplDir . '/js/template.js');
   <nav class="header-wrapper navbar navbar-default">
     <div class="container">
       <!-- brand and menu toggle -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed open-menu" data-toggle="collapse" data-menu="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only"><?php echo JText::_('TPL_TSB2017_TOGGLE_MENU'); ?></span>
-          <span class="icon-bar upper-icon-bar"></span>
-          <span class="icon-bar middle-icon-bar"></span>
-          <span class="icon-bar lower-icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="<?php echo $this->baseurl; ?>/">
-          <div class="navbar-logo">
-            <img src="<?php echo $tmplDir; ?>/images/logo.png" alt="TSB" />
-          </div>
-          <div class="navbar-title hidden-xs hidden-sm hidden-md">
-            <img src="<?php echo $tmplDir; ?>/images/title.png" alt="Turnerschaft Bendorf" />
-          </div>
-        </a>
+      <div class="row">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed open-menu" data-toggle="collapse" data-menu="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only"><?php echo JText::_('TPL_TSB2017_TOGGLE_MENU'); ?></span>
+            <span class="icon-bar upper-icon-bar"></span>
+            <span class="icon-bar middle-icon-bar"></span>
+            <span class="icon-bar lower-icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="<?php echo $this->baseurl; ?>/">
+            <div class="navbar-logo">
+              <img src="<?php echo $tmplDir; ?>/images/logo.png" alt="TSB" />
+            </div>
+            <div class="navbar-title hidden-xs hidden-sm hidden-md">
+              <img src="<?php echo $tmplDir; ?>/images/title.png" alt="Turnerschaft Bendorf" />
+            </div>
+          </a>
+        </div>
+
+        <!-- menu and other toggleable content -->
+        <div class="collapse navbar-right navbar-collapse" id="bs-example-navbar-collapse-1">
+          <?php // requires menu class suffix ' navbar-nav' ?>
+          <jdoc:include type="modules" name="mainmenu" style="none" />
+        </div>
+        <div id="isXs" class="visible-xs-block"></div>
       </div>
-      
-      <!-- menu and other toggleable content -->
-      <div class="collapse navbar-right navbar-collapse" id="bs-example-navbar-collapse-1">
-        <?php // requires menu class suffix ' navbar-nav' ?>
-        <jdoc:include type="modules" name="mainmenu" style="none" />
-      </div>
-      <div id="isXs" class="visible-xs-block"></div>
     </div>
   </nav>
   

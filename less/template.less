@@ -47,11 +47,7 @@
   margin-top: 20px;
 }
 #content {
-  padding: 0 15px 15px;
-}
-
-.topbar {
-  overflow: hidden;
+  padding: 0 15px 30px;
 }
 
 
@@ -84,94 +80,15 @@
   }
 }
 
-// #########################
-// # Tile Items
-// #########################
-
-.item {
-  padding: 15px;
-  background-color: #FFFFFF;
-  .item-image {
-    border-bottom: 3px solid @cSecondary;
-  }
-  .item-title {
-    h2 {
-      font-weight: 200;
-    }
-  }
-  // inline details in uppercase
-  .item-details {
-    padding-bottom: 10px;
-    margin-bottom: (10px + 1px); // padding + border => border vertically centered
-    border-bottom: 1px solid #CCC;
-    font-family: @fHeading;
-    font-size: 14px;
-    text-transform: uppercase;
-    .detail-label {
-      display: inline-block;
-      margin-right: 8px;
-    }
-    .detail-value {
-      position: relative;
-      display: inline-block;
-      padding-right: 17px;
-      &:after {
-        content: "";
-        position: absolute;
-        width: 1px;
-        height: 10px;
-        top: 5px;
-        right: 9px;
-        background-color: @cTextContrast;
-      }
-      &:last-child:after {
-        display: none;
-      }
-    }
-  }
-  .item-button {
-    margin-top: 30px;
-    color: @cTextContrast;
-    background-color: @cSecondary;
-  }
-}
-
 
 /* Extra-small devices (smartphones, 767px and less) */
 @media (max-width: @screen-xs-max) {
-  // #########################
-  // # Tile Items
-  // #########################
-  .item {
-    margin-bottom: 15px;
-    .item-title {
-      word-wrap: break-word;
-      h2 {
-        font-size: 170%;
-      }
-    }
-  }
 }
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) {
   #content-wrapper {
     margin-top: 30px;
-  }
-  // #########################
-  // # Tile Items
-  // #########################
-  .item {
-    margin-bottom: 30px;
-    
-    // more button spacing, hover effects
-    .item-button {
-      .ease();
-      margin-top: 10px;
-      &:hover {
-        color: @cSecondaryLight;
-      }
-    }
   }
 }
 
