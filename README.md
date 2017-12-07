@@ -8,9 +8,16 @@ The Yoko theme again is licensed as GNU GPL v2 - and so is this repository.
 * `mainmenu`: main menu within each section
   * modules need the ` navbar-nav` menu class suffix for horizontal item stacking
 * `slider`: slider right below the main menu
+* `intro`: intro menu directly below the slider
+  * handball intro menu: layout `handball`
 * `sidebar`: sidebar to the left of/below the content
+  * events: layout `sef`, module style `sidebar_events` to override title
+  * handball partner: module class suffix ` partner module-stack-head`, layout `sef`, module style `sidebar_partners` to override title
+  * handball sponsors: module class suffix ` partner module-stack-body`, layout `sef`
+  * handball partner button: module class suffix ` module-stack-tail`
 * `footer`: page footer for less commonly accessed links
-  * modules need `col`-classes for horizontal stacking
+  * all modules: module class suffix ` col-xs-12 col-sm-6 col-md-4` for horizontal stacking
+  * handball partner: header class `partner` to get the view heading, layout `footerpartner`
 
 ## Overrides
 * `com_content.article`: single article view displaying e.g. static pages
