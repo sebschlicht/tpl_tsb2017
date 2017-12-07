@@ -13,17 +13,23 @@ The Yoko theme again is licensed as GNU GPL v2 - and so is this repository.
   * modules need `col`-classes for horizontal stacking
 
 ## Overrides
-* `com_content.article.news`: single news blog item
+* `com_content.article`: single article view displaying e.g. static pages
+* `com_content.article.news`: single article displaying a news blog item
+* `com_content.article.handballteam`: single article item displaying a handball team
 * `com_content.category.blog`: section news blog
 * `mod_menu.handball`: layout for the handball team menu displayed above the handball section news
 * `mod_banners.sef`: layout for banners which hides the tracking URL away from the user (sacrifies tracking of tab browsing)
+* `mod_banners.partnerlist`: layout for SEF banners as a list to display all partners
+* `mod_banners.footerpartner`: layout for SEF banners, horizontally stacked like in the footer
 * `modules.sidebar`: layout for modules displayed in the sidebar
 * `modules.sidebar_*`: module layouts which override the module title (new title can be overridden via language overrides)
 * `layout.joomla.content.readmore`: read-more button in news blog
-* `layout.joomla.content.blog_info_block`: section news blog item details
+* `layout.joomla.content.blog_info_block`: news blog item details
+* `layout.joomla.content.info_block`: news item details (article view)
 
 ## Required Extensions
 * Smart Slider 3: [slider](https://github.com/sebschlicht/www-tsb2017/wiki/Slider) used at main entry points
+* [Balbooa 6gallery](https://www.balbooa.com/joomla-gallery-documentation/basics) (**paid**): image gallery with albums and categories
 
 ## Frontend-Technologies
 * CSS 3: style elements and transition between their states
@@ -31,7 +37,7 @@ The Yoko theme again is licensed as GNU GPL v2 - and so is this repository.
 * jQuery: add state classes to elements
 
 ## Development
-The LESS compilation has been automatized using the `Brackets` plugin `LESS AutoCompile`.
+The LESS compilation is automatized using the `Brackets` plugin `LESS AutoCompile`.
 
 ## License
 Except for images, this template is licensed under GNU GPL v2 - just like the cloned Wordpress template.
