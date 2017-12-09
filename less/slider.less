@@ -8,7 +8,7 @@
 @media (max-width: @screen-xs-max) {
   // hide slider text
   #slider {
-    #n2-ss-3 {
+    .n2-ss-slider[id^="n2-ss"] {
       .textbox {
         display: none;
       }
@@ -20,7 +20,7 @@
 @media (min-width: @screen-sm-min) {
   // show slider text in a box
   #slider {
-    #n2-ss-3 {
+    .n2-ss-slider[id^="n2-ss"] {
       // absolutely positioned, semi-transparent text box
       .textbox {
         position: absolute;
@@ -66,6 +66,8 @@
             text-align: left;
             a {
               .ease();
+              color: @cTextContrast;
+              background-color: @cSecondary;
               font-family: 'Oswald';
               &:hover {
                 background-color: darken(@cSecondary, 10%);
@@ -123,7 +125,7 @@
 @media (min-width: @screen-lg-min) {
   // large text box and paddings
   #slider {
-    #n2-ss-3 {
+    .n2-ss-slider[id^="n2-ss"] {
       .textbox {
         max-height: 320px;
         top: auto;
