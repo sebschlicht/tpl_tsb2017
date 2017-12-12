@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 
 JLoader::register('BannerHelper', JPATH_ROOT . '/components/com_banners/helpers/banner.php');
 ?>
-<ul class="item-list">
+<ul class="item-list partner">
 <?php if ($headerText) : ?>
 	<?php echo $headerText; ?>
 <?php endif; ?>

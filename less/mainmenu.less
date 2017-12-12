@@ -43,7 +43,10 @@
     margin: 0;
     // menu items
     li {
-      a {
+      a,
+      .nav-header {
+        display: block;
+        position: relative;
         padding: 10px 20px;
         color: @cMenuText;
         background-color: @cMenu;
@@ -55,6 +58,7 @@
     
     // hovered / active menu items
     .active > a,
+    .active > .nav-header,
     a:hover,
     a:focus {
       color: @cMenuHoverText;
@@ -106,7 +110,8 @@
     .nav-child {
       margin: 0;
       padding: 0;
-      a {
+      a,
+      .nav-header {
         display: block;
         padding-left: 40px;
         text-transform: none;
@@ -114,7 +119,8 @@
           left: 30px;
         }
       }
-      .nav-child a {
+      .nav-child a,
+      .nav-child .nav-header {
         padding-left: 60px;
         &:before {
           left: 50px;
@@ -123,18 +129,21 @@
     }
   }
   // bold active menu items
-  .navbar .navbar-right .navbar-nav .active:not(.current) > a {
-    color: #333;
-    background-color: @cMenu;
-    border-color: none;
-    text-decoration: none;
-    // revert Bootstrap override
-    &:hover,
-    &:focus {
-      color: @cMenuHoverText;
-      background-color: @cMenuHover;
-      border-color: @cMenuHover;
+  .navbar .navbar-right .navbar-nav .active:not(.current) {
+    > a,
+    > .nav-header {
+      color: #333;
+      background-color: @cMenu;
+      border-color: none;
       text-decoration: none;
+      // revert Bootstrap override
+      &:hover,
+      &:focus {
+        color: @cMenuHoverText;
+        background-color: @cMenuHover;
+        border-color: @cMenuHover;
+        text-decoration: none;
+      }
     }
   }
   // limit logo height
@@ -188,18 +197,21 @@
     // horizontal border between elements
     li {
       position: relative;
-      a {
+      a,
+      .nav-header {
         padding: 47px 20px 46px;
         border-left: 1px solid #E1E1E1;
       }
     }
     li:last-child {
-      a {
+      a,
+      .nav-header {
         border-right: 1px solid #E1E1E1;
       }
     }
     // submenu indicator
-    li.deeper > a {
+    li.deeper > a,
+    li.deeper > .nav-header {
       &:after {
         .ease();
         content: "";
@@ -219,7 +231,9 @@
     // highlight parental menu items of active item to keep track of the path
     li.deeper:hover > a,
     li.deeper.active > a,
-    li.deeper > a:focus {
+    li.deeper > a:focus,
+    li.deeper:hover > .nav-header,
+    li.deeper.active > .nav-header {
       color: @cTextContrast;
       background-color: @cSecondary;
       border-color: @cSecondary;
@@ -248,7 +262,8 @@
           margin: 0;
         }
       }
-      a {
+      a,
+      .nav-header {
         display: block;
         width: 13em;
         padding: 9px 14px;
@@ -263,7 +278,8 @@
       // hide submenu item border on hover
       li:hover,
       .active {
-        > a {
+        > a,
+        > .nav-header {
           &:after {
             border-color: @cMenuHover;
           }
@@ -276,7 +292,8 @@
     }
     // sub-submenu indicator
     .nav-child {
-      .deeper > a {
+      .deeper > a,
+      .deeper > .nav-header {
         &:after {
           left: auto;
           right: 14px;
@@ -289,7 +306,8 @@
       // lighten submenu indicator
       .deeper:hover,
       .deeper.active {
-        > a {
+        > a,
+        > .nav-header {
           //border-color: @cMenuHover;
           &:after {
             border-color: @cMenuHoverText;
