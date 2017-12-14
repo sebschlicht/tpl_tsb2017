@@ -7,6 +7,7 @@
 @cBlogItem: #FFFFFF;
 
 .blog-item {
+  position: relative;
   padding: 15px;
   padding-bottom: (15px + 34px + 15px);
   background-color: @cBlogItem;
@@ -18,12 +19,9 @@
       height: auto;
     }
   }
-  .icons button {
-    background: transparent;
-    &:hover,
-    &:focus {
-      background-color: darken(@cBlogItem, 5%);
-    }
+  .icons {
+    right: 15px;
+    top: 15px;
   }
   .item-text {
     position: relative;
@@ -136,6 +134,11 @@
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) {
+  .blog-item {
+    .icons button {
+      padding: 3px 10px;
+    }
+  }
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -144,5 +147,10 @@
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: @screen-lg-min) {
+  .blog-item {
+    .icons button {
+      padding: 6px 12px;
+    }
+  }
 }
 

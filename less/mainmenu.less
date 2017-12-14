@@ -54,6 +54,9 @@
         font-weight: 700;
         text-transform: uppercase;
       }
+      .nav-header {
+        cursor: default;
+      }
     }
     
     // hovered / active menu items
@@ -199,8 +202,12 @@
       position: relative;
       a,
       .nav-header {
-        padding: 47px 20px 46px;
+        padding: 47px 18px 46px;
         border-left: 1px solid #E1E1E1;
+        font-size: 13px;
+      }
+      .nav-header {
+        padding: 48px 18px 46px;
       }
     }
     li:last-child {
@@ -272,8 +279,11 @@
         text-decoration: none;
         text-transform: none;
       }
-      > li:last-child > a {
-        border: none;
+      > li:last-child {
+        > a,
+        > .nav-header {
+          border: none;
+        }
       }
       // hide submenu item border on hover
       li:hover,
@@ -325,6 +335,17 @@
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: @screen-md-min) {
+  .navbar-right .navbar-nav {
+    // increase menu item size
+    li {
+      a,
+      .nav-header {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 15px;
+      }
+    }
+  }
 }
 
 /* Large devices (large desktops, 1200px and up) */
