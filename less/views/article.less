@@ -53,7 +53,17 @@
     overflow-y: hidden;
     table td,
     table th {
-      padding: 8px 16px;
+      padding: 4px 10px;
+    }
+    table {
+      // hide less important columns
+      .pnlg-num-matches,
+      .pnlg-goal-diff,
+      .pnlg-weekday,
+      .pnlg-hall,
+      .pnlg-nuliga-id {
+        display: none;
+      }
     }
   }
 }
@@ -158,6 +168,9 @@
     th {
       padding: 6px 12px;
     }
+    .pnlg-goal-diff {
+      display: table-cell;
+    }
   }
 }
 
@@ -169,6 +182,10 @@
 @media (min-width: @screen-lg-min) {
   // NuLiga tables can take large paddings
   .handball-team .nuliga table {
+    // show all columns
+    .pnlg-num-matches {
+      display: table-cell;
+    }
     td,
     th {
       padding: 8px 16px;
