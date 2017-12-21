@@ -92,23 +92,24 @@
   
   // full-width submenus
   .navbar .navbar-right {
-    a {
+    a,
+    .nav-header {
       position: relative;
-    }
-    a:before {
-      position: absolute;
-      left: 10px;
-      top: 0;
-      bottom: 0;
-      width: 5px;
-      height: 9px;
-      content: "\f054";
-      margin: auto 0;
-      color: @cSecondary;
-      font-family: 'FontAwesome';
-      font-size: 8px;
-      font-weight: normal;
-      line-height: 1;
+      &:before {
+        position: absolute;
+        left: 10px;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+        height: 9px;
+        content: "\f054";
+        margin: auto 0;
+        color: @cSecondary;
+        font-family: 'FontAwesome';
+        font-size: 8px;
+        font-weight: normal;
+        line-height: 1;
+      }
     }
     .nav-child {
       margin: 0;
@@ -133,8 +134,7 @@
   }
   // bold active menu items
   .navbar .navbar-right .navbar-nav .active:not(.current) {
-    > a,
-    > .nav-header {
+    > a {
       color: #333;
       background-color: @cMenu;
       border-color: none;
@@ -147,6 +147,18 @@
         border-color: @cMenuHover;
         text-decoration: none;
       }
+    }
+    > .nav-header {
+      color: #333;
+      background-color: @cMenu;
+    }
+  }
+  // disable hovering of header items
+  .navbar .navbar-right .navbar-nav li > .nav-header {
+    &:hover,
+    &:focus {
+      color: @cMenuText;
+      background-color: @cMenu;
     }
   }
   // limit logo height
@@ -205,9 +217,7 @@
         padding: 47px 18px 46px;
         border-left: 1px solid #E1E1E1;
         font-size: 13px;
-      }
-      .nav-header {
-        padding: 48px 18px 46px;
+        line-height: 20px;
       }
     }
     li:last-child {
