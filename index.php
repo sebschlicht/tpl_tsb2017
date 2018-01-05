@@ -52,7 +52,7 @@ $doc->addScript($tmplDir . '/js/template.js');
         <div class="topbar-menu col-xs-12 col-sm-9">
           <jdoc:include type="modules" name="topmenu" style="xhtml" />
         </div>
-        <div class="topbar-search col-xs-6 col-sm-3">
+        <div class="topbar-search col-xs-12 col-sm-3">
           <jdoc:include type="modules" name="search" style="xhtml" />
         </div>
       </div>
@@ -118,14 +118,14 @@ $doc->addScript($tmplDir . '/js/template.js');
   <div id="content-wrapper" class="container">
     <div class="row">
       <!-- content -->
-      <main id="content" class="col-xs-12 col-md-8 pull-right" role="main">
+      <main id="content" class="position-container col-xs-12 col-md-8 pull-right" role="main">
         <jdoc:include type="modules" name="content-before" style="xhtml" />
         <jdoc:include type="message" />
         <jdoc:include type="component" />
         <jdoc:include type="modules" name="content-after" style="none" />
       </main>
       <!-- sidebar -->
-      <div id="sidebar" class="col-xs-12 col-md-4 pull-left">
+      <div id="sidebar" class="position-container col-xs-12 col-md-4 pull-left">
         <jdoc:include type="modules" name="sidebar" style="sidebar" />
       </div>
     </div>

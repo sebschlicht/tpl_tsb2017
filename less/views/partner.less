@@ -5,24 +5,35 @@
 // #########################
 
 // TODO move to template.less?
-.item-list {
-  > * {
-    margin: 0;
+.partner-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  li {
     padding: 10px;
-    overflow: visible;
     &:nth-child(2n+1) {
       background-color: @cBackgroundListItemOdd;
     }
     &:nth-child(2n) {
       background-color: @cBackgroundListItemEven;
     }
+    
+    > a,
     > img {
       float: left;
-      max-width: 210px;
       margin-right: 20px;
     }
-    > span {
-      display: inline-block;
+    h3 {
+      float: left;
+      padding: 60px 0 0;
+      margin: 0;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  }
+  &.item-list-210 {
+    img {
+      max-width: 210px;
     }
   }
 }
@@ -79,7 +90,6 @@
   h2:not(:first-child) {
     margin-top: 40px;
   }
-  
   &.item-list {
     list-style: none;
     margin: 0;
@@ -93,17 +103,18 @@
 
 /* Extra-small devices (smartphones, 767px and less) */
 @media (max-width: @screen-xs-max) {
+  .partner-list {
+    li h3 {
+      padding-top: 20px;
+    }
+  }
   // show each table cell in a new line if necessary
   .item-table {
-    margin: 0 -20px;
     tr {
       td {
         display: inline-block;
         float: left;
         padding: 20px;
-      }
-      td:last-child:nth-child(2) {
-        padding-top: 40px;
       }
     }
   }

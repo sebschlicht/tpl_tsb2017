@@ -11,19 +11,17 @@ defined('_JEXEC') or die;
 
 JLoader::register('BannerHelper', JPATH_ROOT . '/components/com_banners/helpers/banner.php');
 ?>
-<table class="item-table item-table-sub item-table-210 partner-list">
+<ul class="item-list item-list-210 partner-list">
 <?php if ($headerText) : ?>
 	<?php echo $headerText; ?>
 <?php endif; ?>
 
 <?php foreach ($list as $item) : ?>
-	<tr>
+	<li class="clearfix">
 		<?php $link = JRoute::_('index.php?option=com_banners&task=click&id=' . $item->id); ?>
 		<?php if ($item->type == 1) : ?>
 			<?php // Text based banners ?>
-      <td>
 			<?php echo str_replace(array('{CLICKURL}', '{NAME}'), array($link, $item->name), $item->custombannercode); ?>
-      </td>
 		<?php else : ?>
 			<?php $imageurl = $item->params->get('imageurl'); ?>
 			<?php $width = $item->params->get('width'); ?>
@@ -34,7 +32,6 @@ JLoader::register('BannerHelper', JPATH_ROOT . '/components/com_banners/helpers/
 				<?php $alt = $item->params->get('alt'); ?>
 				<?php $alt = $alt ?: $item->name; ?>
 				<?php $alt = $alt ?: JText::_('MOD_BANNERS_BANNER'); ?>
-      <td>
 				<?php if ($item->clickurl) : ?>
 					<?php // Wrap the banner in a link ?>
 					<?php $target = $params->get('target', 1); ?>
@@ -88,10 +85,7 @@ JLoader::register('BannerHelper', JPATH_ROOT . '/components/com_banners/helpers/
 						<?php if (!empty($height)) echo ' height="' . $height . '"';?>
 					/>
 				<?php endif; ?>
-      </td>
-      <td>
                 <h3><?php echo $alt; ?></h3>
-      </td>
 			<?php elseif (BannerHelper::isFlash($imageurl)) : ?>
 				<object
 					classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
@@ -111,6 +105,6 @@ JLoader::register('BannerHelper', JPATH_ROOT . '/components/com_banners/helpers/
 				</object>
 			<?php endif; ?>
 		<?php endif; ?>
-	</tr>
+	</li>
 <?php endforeach; ?>
-</table>
+</ul>
