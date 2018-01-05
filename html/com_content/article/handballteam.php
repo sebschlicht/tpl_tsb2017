@@ -28,14 +28,41 @@ $app  = JFactory::getApplication();
 $menu = $app->getMenu()->getActive()->link;
 $link = JRoute::_($menu);
 
-// load team's subtitle
+// load all teams
+function loadTeams() {
+    // check if com_nuliga is installed and enabled
+    if (JComponentHelper::isEnabled('com_nuliga', true))
+    {
+        // import required component classes
+        JTable::addIncludePath(JPATH_ADMINISTRATOR . '/components/com_nuliga/tables');
+        JModelLegacy::addIncludePath(JPATH_SITE.'/components/com_nuliga/models', 'NuLigaModel');
+        
+        // configure team model
+        $model = JModelLegacy::getInstance('Team', 'NuLigaModel');
+        $model->setState('list.start', 0);
+        $model->setState('list.limit', 0);
+        $model->setState('filter.published', 1);
+        
+        // load teams via team model
+        return $model->getItems();
+    }
+    else
+    {
+        return [];
+    }
+}
+$teams = loadTeams();
+
+// make team subtitle (league) accessible via team title
 function loadTeamSubtitle( $name ) {
-  $ligen = array(
-    '1. Mannschaft' => 'Rheinlandliga',
-    '2. Mannschaft' => 'Verbandsliga Ost',
-    '3. Mannschaft' => 'Bezirksklasse Rhein/Westerwald'
-  );
-  return array_key_exists( $name, $ligen ) ? $ligen[$name] : null;
+    foreach ($teams as $team)
+    {
+        if ($team->title == $name)
+        {
+            return $team->league;
+        }
+    }
+    return null;
 }
 
 ?>

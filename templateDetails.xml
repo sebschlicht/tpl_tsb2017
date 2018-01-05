@@ -1,11 +1,14 @@
 <extension version="3.2" type="template" client="site" method="upgrade">
   <name>tsb2017</name>
-  <version>1.0</version>
+  <version>1.01</version>
   <creationDate>09/11/2017</creationDate>
   <author>Sebastian Schlicht</author>
   <authorEmail>sebastian@jablab.de</authorEmail>
   <copyright>Copyright (C) 2017 - JabLab GbR, Inh. Sebastian Schlicht und Markus Münzel. All rights reserved.</copyright>
   <description>TPL_TSB2017_XML_DESCRIPTION</description>
+  <updateservers>
+   <server type="extension" name="tsb2017" priority="1">http://dev.jablab.de/updates/tsb2017/template.xml</server>
+  </updateservers>
   <files>
     <filename>favicon.png</filename>
     <filename>index.php</filename>
