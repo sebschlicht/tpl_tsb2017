@@ -7,5 +7,6 @@ zip -q -9 -x "/.gitignore" \
   -x "/.mkzip.sh.swp" \
   -x "/.brackets.json" \
   -x "/less/*" \
+  -x "/template.xml" \
   -r tsb2017.zip .
 

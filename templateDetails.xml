@@ -7,7 +7,7 @@
   <copyright>Copyright (C) 2017 - JabLab GbR, Inh. Sebastian Schlicht und Markus Münzel. All rights reserved.</copyright>
   <description>TPL_TSB2017_XML_DESCRIPTION</description>
   <updateservers>
-   <server type="extension" name="tsb2017" priority="1">http://dev.jablab.de/updates/tsb2017/template.xml</server>
+   <server type="extension" name="tsb2017" priority="1">http://dev.jablab.de/updates/tpl_tsb2017/template.xml</server>
   </updateservers>
   <files>
     <filename>favicon.png</filename>

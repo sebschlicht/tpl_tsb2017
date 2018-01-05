@@ -28,49 +28,51 @@ $app  = JFactory::getApplication();
 $menu = $app->getMenu()->getActive()->link;
 $link = JRoute::_($menu);
 
-// load all teams
-function loadTeams() {
-    // check if com_nuliga is installed and enabled
-    if (JComponentHelper::isEnabled('com_nuliga', true))
+class TeamHelper
+{
+    var $teams;
+    
+    function __construct()
     {
-        // import required component classes
-        JTable::addIncludePath(JPATH_ADMINISTRATOR . '/components/com_nuliga/tables');
-        JModelLegacy::addIncludePath(JPATH_SITE.'/components/com_nuliga/models', 'NuLigaModel');
-        
-        // configure team model
-        $model = JModelLegacy::getInstance('Team', 'NuLigaModel');
-        $model->setState('list.start', 0);
-        $model->setState('list.limit', 0);
-        $model->setState('filter.published', 1);
-        
-        // load teams via team model
-        return $model->getItems();
-    }
-    else
-    {
-        return [];
-    }
-}
-$teams = loadTeams();
-
-// make team subtitle (league) accessible via team title
-function loadTeamSubtitle( $name ) {
-    foreach ($teams as $team)
-    {
-        if ($team->title == $name)
+        // check if com_nuliga is installed and enabled
+        if (JComponentHelper::isEnabled('com_nuliga', true))
         {
-            return $team->league;
+            // import required component classes
+            JTable::addIncludePath(JPATH_ADMINISTRATOR . '/components/com_nuliga/tables');
+            JModelLegacy::addIncludePath(JPATH_SITE.'/components/com_nuliga/models', 'NuLigaModel');
+
+            // configure teams model
+            $teamModel = JModelLegacy::getInstance('Teams', 'NuLigaModel');
+
+            // load teams via teams model
+            $this->teams = $teamModel->getItems();
+        }
+        else
+        {
+            $this->teams = [];
         }
     }
-    return null;
+    
+    function getLeague($teamTitle)
+    {
+        foreach ($this->teams as $team)
+        {
+            if ($team->title === $teamTitle)
+            {
+                return $team->league;
+            }
+        }
+        return null;
+    }
 }
+$teamHelper = new TeamHelper;
 
 ?>
 <div class="default-article article handball-team item-page<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Article">
 	<meta itemprop="inLanguage" content="<?php echo ($this->item->language === '*') ? JFactory::getConfig()->get('language') : $this->item->language; ?>" />
 	<?php if ($this->params->get('show_page_heading')) : ?>
 	<div class="page-header">
-		<h1> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
+		<h1><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
 	</div>
 	<?php endif;
 	if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->paginationposition && $this->item->paginationrelative)
@@ -119,7 +121,7 @@ function loadTeamSubtitle( $name ) {
 			</div>
 		<?php endif; ?>
 	<?php endif; ?>
-    <?php $subtitle = loadTeamSubtitle( $this->item->title ); ?>
+    <?php $subtitle = $teamHelper->getLeague( $this->item->title ); ?>
     <?php if ( $subtitle ) : ?>
     <h3 class="subtitle"><?php echo $subtitle; ?></h3>
     <?php endif; ?>
