@@ -190,6 +190,15 @@ $team = TeamHelper::getTeam($this->item->title);
 	endif; ?>
 	<div itemprop="articleBody">
 		<?php echo $this->item->text; ?>
+        
+        <?php if ($team && $team->urlLeague): ?>
+            <h2>Tabelle <?php echo $team->league; ?></h2>
+            <p><?php echo JHtml::_('content.prepare', "{nuliga|team=$team->id|view=league}"); ?></p>
+        <?php endif; ?>
+        <?php if ($team && $team->urlPortrait): ?>
+            <h2>Spielplan <?php echo $team->title; ?></h2>
+            <p><?php echo JHtml::_('content.prepare', "{nuliga|team=$team->id|view=schedule}"); ?></p>
+        <?php endif; ?>
 	</div>
 
 	<?php if ($info == 1 || $info == 2) : ?>
