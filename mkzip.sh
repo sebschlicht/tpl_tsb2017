@@ -1,5 +1,5 @@
 #!/bin/bash
-rm -f tsb2017.zip
+rm -f tpl_tsb2017.zip
 zip -q -9 -x "/.gitignore" \
   -x "/.git/*" \
   -x "/.idea/*" \
@@ -8,5 +8,5 @@ zip -q -9 -x "/.gitignore" \
   -x "/.brackets.json" \
   -x "/less/*" \
   -x "/template.xml" \
-  -r tsb2017.zip .
+  -r tpl_tsb2017.zip .
 
