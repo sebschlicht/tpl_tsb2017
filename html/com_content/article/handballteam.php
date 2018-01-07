@@ -81,7 +81,7 @@ class TeamHelper
         {
             // load team via NuLiga component model
             $model = JModelLegacy::getInstance('Teams', 'NuLigaModel');
-            $model->setState('filter.title', $teamTitle);
+            $model->setState('filter.search', $teamTitle);
             $teams = $model->getItems();
             return count($teams) ? $teams[0] : null;
         }
