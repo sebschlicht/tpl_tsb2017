@@ -30,42 +30,66 @@ $link = JRoute::_($menu);
 
 class TeamHelper
 {
-    var $teams;
+    /**
+     * @var bool true if the helper has been tried to initialize yet
+     */
+    protected static $initialized = false;
     
-    function __construct()
+    /**
+     * @var bool true if the initialization has not been successful
+     */
+    protected static $initializationFailed = false;
+    
+    /**
+     * Initializes the helper if it hasn't been initialized yet.
+     *
+     * @return bool true if the initialization has been successul
+     */
+    public static function init()
     {
+        if (static::$initialized)
+        {
+            return !static::$initializationFailed;
+        }
+        
         // check if com_nuliga is installed and enabled
         if (JComponentHelper::isEnabled('com_nuliga', true))
         {
             // import required component classes
             JTable::addIncludePath(JPATH_ADMINISTRATOR . '/components/com_nuliga/tables');
             JModelLegacy::addIncludePath(JPATH_SITE.'/components/com_nuliga/models', 'NuLigaModel');
-
-            // configure teams model
-            $teamModel = JModelLegacy::getInstance('Teams', 'NuLigaModel');
-
-            // load teams via teams model
-            $this->teams = $teamModel->getItems();
         }
         else
         {
-            $this->teams = [];
+            static::$initializationFailed = true;
         }
+        
+        static::$initialized = true;
+        return !static::$initializationFailed;
     }
     
-    function getLeague($teamTitle)
+    /**
+     * Retrieves a team via the NuLiga component.
+     *
+     * @param $teamTitle string team title
+     * @return NuLigaModelTeam team with the given title or null if not found
+     */
+    public static function getTeam($teamTitle)
     {
-        foreach ($this->teams as $team)
+        
+        if (static::init())
         {
-            if ($team->title === $teamTitle)
-            {
-                return $team->league;
-            }
+            // load team via NuLiga component model
+            $model = JModelLegacy::getInstance('Teams', 'NuLigaModel');
+            $model->setState('filter.title', $teamTitle);
+            $teams = $model->getItems();
+            return count($teams) ? $teams[0] : null;
         }
-        return null;
     }
 }
-$teamHelper = new TeamHelper;
+
+// load current team via NuLiga component
+$team = TeamHelper::getTeam($this->item->title);
 
 ?>
 <div class="default-article article handball-team item-page<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Article">
@@ -121,7 +145,7 @@ $teamHelper = new TeamHelper;
 			</div>
 		<?php endif; ?>
 	<?php endif; ?>
-    <?php $subtitle = $teamHelper->getLeague( $this->item->title ); ?>
+    <?php $subtitle = ($team !== null) ? $team->league : null; ?>
     <?php if ( $subtitle ) : ?>
     <h3 class="subtitle"><?php echo $subtitle; ?></h3>
     <?php endif; ?>

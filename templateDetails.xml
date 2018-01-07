@@ -1,6 +1,6 @@
 <extension version="3.2" type="template" client="site" method="upgrade">
   <name>tsb2017</name>
-  <version>1.01</version>
+  <version>1.11</version>
   <creationDate>09/11/2017</creationDate>
   <author>Sebastian Schlicht</author>
   <authorEmail>sebastian@jablab.de</authorEmail>
